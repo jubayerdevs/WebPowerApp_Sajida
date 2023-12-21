@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoggedReportLayout.cshtml";
+}
+
+
+ @ViewBag.loggedUser
+ <br />
+ <hr />
+
+@* @ViewBag.loggedUserRole
+@ViewBag.getLoggedUserName*@
+
+        
+        @if (ViewBag.loggedUserRole == "Accounts")
+        {
+            <a asp-controller="IndividualReports" asp-action="EmbedReport" asp-route-id="8">
+                <i class='fas fa-eye'></i> View Report
+            </a>
+        }
+        else if (ViewBag.loggedUserRole == "Business")
+        {
+            <a asp-controller="IndividualReports" asp-action="EmbedReport" asp-route-id="9">
+                <i class='fas fa-eye'></i> View Report
+            </a>
+        }
+        else if (ViewBag.loggedUserRole == "Operation")
+        {
+            <a asp-controller="IndividualReports" asp-action="EmbedReport" asp-route-id="11">
+                <i class='fas fa-eye'></i>  Report Version -01 
+            </a>
+            
+            <span>|</span>
+            
+            <a asp-controller = "IndividualReports" asp-action = "EmbedReport" asp-route-id = "12" >
+                <i class='fas fa-eye'></i>  Report Version -02 
+            </a>
+
+        }
+        else if (ViewBag.loggedUserRole == "HR")
+        {
+            <a asp-controller="IndividualReports" asp-action="EmbedReport" asp-route-id="10">
+                <i class='fas fa-eye'></i> View Report
+            </a>
+        }
+
+           

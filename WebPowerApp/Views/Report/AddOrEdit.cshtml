@@ -1,0 +1,112 @@
+﻿@model WebPowerApp.Models.ReportModel
+
+@{
+    ViewData["Title"] = "Create Report";
+    Layout = "~/Views/Shared/_LoggedLayout.cshtml";
+}
+
+<h4> Create Report </h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="AddOrEdit">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="ReportName" class="control-label"></label>
+                @Html.TextBoxFor(m => m.ReportName, new { @class = "form-control" })
+                <span asp-validation-for="ReportName" class="text-danger"></span>
+            </div>
+            
+
+            <div class="form-row">
+                <div class="form-group  col-md-4">
+                    <label asp-for="AuthenticationType" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.AuthenticationType, new { @class = "form-control" })
+                    <span asp-validation-for="AuthenticationType" class="text-danger"></span>
+                </div>
+            
+
+                <div class="form-group  col-md-4">
+                    <label asp-for="ReportId" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.ReportId, new { @class = "form-control" })
+                    <span asp-validation-for="ReportId" class="text-danger"></span>
+                </div>
+           
+
+                <div class="form-group  col-md-4">
+                    <label asp-for="ApplicationId" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.ApplicationId, new { @class = "form-control" })
+                    <span asp-validation-for="ApplicationId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group  col-md-6">
+                    <label asp-for="WorkspaceId" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.WorkspaceId, new { @class = "form-control" })
+                    <span asp-validation-for="WorkspaceId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group  col-md-6">
+                    <label asp-for="AuthorityUrl" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.AuthorityUrl, new { @class = "form-control" })
+                    <span asp-validation-for="AuthorityUrl" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group  col-md-6">
+                    <label asp-for="Scope" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.Scope, new { @class = "form-control" })
+                    <span asp-validation-for="Scope" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group  col-md-6">
+                    <label asp-for="UrlPowerBiServiceApiRoot" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.UrlPowerBiServiceApiRoot, new { @class = "form-control" })
+                    <span asp-validation-for="UrlPowerBiServiceApiRoot" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group  col-md-6">
+                    <label asp-for="ApplicationSecret" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.ApplicationSecret, new { @class = "form-control" })
+                    <span asp-validation-for="ApplicationSecret" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group  col-md-6">
+                    <label asp-for="Tenant" class="control-label"></label>
+                    @Html.TextBoxFor(m => m.Tenant, new { @class = "form-control" })
+                    <span asp-validation-for="Tenant" class="text-danger"></span>
+                </div>
+            </div>
+
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Back to List</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

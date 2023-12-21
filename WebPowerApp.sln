@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPowerApp_Sajida", "WebPowerApp\WebPowerApp_Sajida.csproj", "{7BFD8B12-892C-4764-A38F-A51AB758B64A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BFD8B12-892C-4764-A38F-A51AB758B64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFD8B12-892C-4764-A38F-A51AB758B64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFD8B12-892C-4764-A38F-A51AB758B64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFD8B12-892C-4764-A38F-A51AB758B64A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F00F2D2D-790B-4CD0-B985-86F16F2A4863}
+	EndGlobalSection
+EndGlobal

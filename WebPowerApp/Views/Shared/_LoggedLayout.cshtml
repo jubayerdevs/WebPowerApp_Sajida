@@ -1,0 +1,208 @@
+﻿@using WebPowerApp.Utilities;
+@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PBI Report</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HtmlTemp</title>
+   @* JUB <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
+    @*<link rel="stylesheet" href="~/HtmlTemp.styles.css" asp-append-version="true" />*@
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    @*<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>*@
+    <link href="~/css/newstyle.css" rel="stylesheet" />
+    @*<script src="~/js/nav.js"></script>*@
+
+
+    <style>
+        .navbar-inverse navbar-fixed-top{
+            background-color:brown;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: #051a02;
+        }
+
+        .footer {
+            background: #acb3b9;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+    <div id="noty-holder"></div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:#3399ff;" role="navigation">
+            @*<div style="position: absolute;
+            left: 0;
+            margin-left: 20px;
+            top: 0;
+            margin-top: 2px;">*@
+
+                @*<h1><span style="color:white"> <i>e</i>curier </span></h1>*@
+
+
+            <img src="~/images/sanjida.svg" height="35px" width="155px" style="
+            position: absolute;
+            left: 0;
+            margin-left: 20px;
+            top: 0;
+            margin-top: 20px;
+            " />
+            @*</div>*@
+
+
+
+            <div style="float: right;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a class="navbar-brand" href="https://bryanrojasq.wordpress.com">
+                    <img src="http://placehold.it/200x50&text=LOGO" alt="LOGO">
+                </a>*@
+            </div>
+            </div>
+
+            <div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li>
+                    <a href="#" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Stats">
+                        <i class="fa fa-bar-chart-o"></i>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        @ViewBag.SessionUser
+                        @Context.Session.GetString(SessionKeys.LOGGED_USERNAME_COOKIE) @*Admin User*@ <b class="fa fa-angle-down"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                        <li class="divider"></li>
+                        <li>
+
+                            <a asp-action="Logout" asp-controller="Home">
+                                <i class="fa fa-fw fa-power-off"></i> Logout
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            </div>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    @*<li>
+                        <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> MENU 1 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                        <ul id="submenu-1" class="collapse">
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.1</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.2</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
+                        </ul>
+                    </li>*@
+                    @*<li>
+                        <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  MENU 2 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                        <ul id="submenu-2" class="collapse">
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.1</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.2</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.3</a></li>
+                        </ul>
+                    </li>*@
+                    @*<li>
+                        <a href="investigaciones/favoritas"><i class="fa fa-fw fa-user-plus"></i>  MENU 3</a>
+                    </li>
+                    <li>
+                        <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i> MENU 4</a>
+                    </li>*@
+                   @* <li>
+                        <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
+                    </li>*@
+
+                    
+                    <li>
+                        <a asp-area="" asp-controller="Role" asp-action="Index"> <i class="fa fa-users" aria-hidden="true"></i> Role </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Employee" asp-action="Index"><i class="fa fa-user" aria-hidden="true"></i> Employee </a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Report" asp-action="Index"> <i class="fa fa-file" aria-hidden="true"></i> Report(s) </a>
+                    </li>
+                    @*<li>
+                        <a asp-area="" asp-controller="PbiRpt" asp-action="EmbedReport"> <i class="fa fa-bar-chart" aria-hidden="true"></i> Report  </a>
+                    </li>*@
+                    <li>
+                        <a asp-action="Logout" asp-controller="Home">
+                            Logout
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row" id="main">
+                    <div class="col-sm-12 col-md-12 well" id="content">
+                        @*<h1>Welcome Admin!</h1>*@
+
+                        @RenderBody()
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+
+
+
+
+        <div style="padding-top:380px"><br /></div>
+        <div class="footer">
+            <p>copyright &copy; ReportViewer</p>
+        </div>
+        <!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+
+
+
+
+    
+</body>
+</html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+@RenderSection("scripts", required: false)
+@*@await RenderSectionAsync("Scripts", required: false)*@
+
+
+
+
+
+
+
+
+
